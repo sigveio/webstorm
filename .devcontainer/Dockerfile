@@ -23,5 +23,5 @@ RUN mkdir /home/node/.gem
 RUN export GEM_HOME=/home/node/.gem
 RUN export GEM_PATH=/home/node/.gem
 SHELL ["zsh", "-c"]
-RUN gem install --install-dir=/home/node/.gem bundler
+RUN gem install --install-dir=/home/node/.gem bundler -v 2.4.22
 #RUN gem install shopify_transporter
