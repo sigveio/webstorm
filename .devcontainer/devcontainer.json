@@ -1,0 +1,12 @@
+{
+  "name": "Webstorm-Shopify",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "webstorm-shopify",
+  "remoteUser": "node",
+  "containerUser": "node",
+  "workspaceFolder": "/home/node/dev",
+  // Install global and local deps every time, since we use tmpfs/RAM disk for npm
+  // e.g. "postStartCommand": "yarn global add <package> && yarn install"
+  //"initializeCommand": "find ~/.ssh/ -type f -exec grep -l 'PRIVATE' {} \\; | xargs ssh-add",
+  "postStartCommand": "yarn install && yarn global add @shopify/cli --prefix /home/node/.pkg-global && yarn global add @shopify/theme --prefix /home/node/.pkg-global"
+}

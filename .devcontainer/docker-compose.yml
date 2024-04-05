@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  webstorm-shopify:
+    user: "1000"
+    build:
+      context: .
+    # Uncomment below if you want to use a specific name for the container
+    #container_name: devcontainer
+    tty: true
+    #tmpfs:
+    #  - /home/node/dev/node_modules:exec,mode=770,uid=1000,gid=1000
+    #  - /home/node/.npm:exec,mode=770,uid=1000,gid=1000
+    #  - /home/node/.cache:exec,mode=770,uid=1000,gid=1000
+    # - /home/node/.pkg-global:exec,mode=770,uid=1000,gid=1000
+    volumes:
+      - webstorm-workspace:/home/node/dev
+      - .:/home/node/dev/.devcontainer
+      - ../.vscode:/home/node/dev/.vscode
+    #labels:
+      #- "traefik.enable=true"
+      #- "traefik.http.routers.shopify-liquid.rule=Host(`shopify.hoesi.test`)"
+      #- "traefik.http.routers.shopify-liquid.entrypoints=web"
+      #- "traefik.http.services.shopify-liquid.loadbalancer.server.port=9292"
+      #- "traefik.http.services.shopify-liquid.loadbalancer.server.scheme=http"
+      #- "traefik.http.middlewares.shopify.redirectscheme.scheme=http"
+    #ports:
+    #  - "9292:9292"
+    #networks:
+    #  - default
+
+volumes:
+  webstorm-workspace:
+
+#networks:
+#  default:
+#    external:
+#      name: gateway
