@@ -19,6 +19,6 @@ ENV PATH="/home/node/.rbenv/bin:$PATH"
 RUN export PATH="$(yarn global bin):$PATH"
 RUN rbenv install 2.7.6
 RUN rbenv global 2.7.6
-SHELL ["/usr/bin/zsh"]
-RUN gem install bundler
+#SHELL ["/usr/bin/zsh"]
+#RUN gem install bundler
 #RUN gem install shopify_transporter
