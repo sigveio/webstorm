@@ -3,7 +3,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
      && apt-get -y install --no-install-recommends curl zsh gcc g++ make \
      ruby-full ruby-dev libssl-dev libreadline-dev zlib1g-dev \
      autoconf bison build-essential libyaml-dev libreadline-dev \
-     libncurses5-dev libffi-dev libgdbm-dev nano vim
+     libncurses5-dev libffi-dev libgdbm-dev nano vim xdg-utils
 USER node
 RUN mkdir /home/node/dev
 ENV NPM_CONFIG_PREFIX=/home/node/.pkg-global
